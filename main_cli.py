@@ -265,7 +265,7 @@ if __name__ == "__main__":
     os.system("clear")
 
     # ----------------------------------
-    #    # Save the file and print report
+    #    Save the file and print report
     # ----------------------------------
     print("-------------------------------")
     print("Saving the data into the file...")
