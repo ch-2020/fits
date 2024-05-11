@@ -177,7 +177,8 @@ def print_report(report_over: dict, rep_frame: Frame) -> None:
     inc = report_over["overview"]["total_income"]
     exp = report_over["overview"]["total_expense"]
     sav = report_over["overview"]["total_savings"]
-
+    
+    print(str(rep_frame))
     try:
         exp_per = report_over["analysis"]["percentage_overview"]["expense"]
     except Exception:
@@ -188,11 +189,22 @@ def print_report(report_over: dict, rep_frame: Frame) -> None:
     except Exception:
         sav_per = "NIL"
 
+    print("-------------------------------")
     print(f"Report for {yr} month {mo}")
+    print("-------------------------------")
     print(f"Total income    : {inc}")
-    print(f"Total expense   : {exp} ({exp_per})")
-    print(f"Total savings   : {sav} ({sav_per})")
-    print(str(rep_frame))
+    print(f"Total expense   : {exp} ({exp_per}%)")
+
+    try:
+        exp_cat = report_over["expense_by_category"]
+        exp_per = report_over["analysis"]["percentage_expense_by_category"]
+        for k in exp_per:
+            print(f"    - {k:<25}: {format(exp_cat[k], '.2f'):<10} ({exp_per[k]}%) ")
+
+    except Exception:
+        sav_per = "NIL"
+
+    print(f"Total savings   : {sav} ({sav_per}%)")
 
 if __name__ == "__main__":
     os.system("clear")

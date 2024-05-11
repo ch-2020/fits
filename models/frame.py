@@ -87,19 +87,19 @@ class Frame:
 
         info += "\n* Recurring incomes:\n"
         for ts, ri in self.recurr_incomes_entries:
-            info += f"[{ri.date_time}   {ts}] {ri.entry_name} : {ri.entry_value} : {ri.entry_comment}\n"
+            info += f"[{ri.date_time}   {ts}] {ri.entry_name} : {ri.entry_value} : {ri.entry_comment} ({ri.entry_type})\n"
         
         info += "\n* Variable incomes:\n"
         for ts, ie in self.incomes_entries:
-            info += f"[{ie.date_time}   {ts}] {ie.entry_name} : {ie.entry_value} : {ie.entry_comment}\n"
+            info += f"[{ie.date_time}   {ts}] {ie.entry_name} : {ie.entry_value} : {ie.entry_comment} ({ie.entry_type})\n"
 
         info += "\n* Recurring expenses:\n"
         for ts, re in self.recurr_expense_entries:
-            info += f"[{re.date_time}   {ts}] {re.entry_name} : {re.entry_value} : {re.entry_comment}\n"
+            info += f"[{re.date_time}   {ts}] {re.entry_name} : {re.entry_value} : {re.entry_comment} ({re.entry_type})\n"
         
         info += "\n* Variable expenses:\n"
         for ts, ee in self.expense_entries:
-            info += f"[{ee.date_time}   {ts}] {ee.entry_name} : {ee.entry_value} : {ee.entry_comment}\n"
+            info += f"[{ee.date_time}   {ts}] {ee.entry_name} : {ee.entry_value} : {ee.entry_comment} ({ee.entry_type})\n"
 
         return info
 
