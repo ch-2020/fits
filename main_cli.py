@@ -255,7 +255,7 @@ if __name__ == "__main__":
         print("     X: Exit")
         print("     E: Add expense")
         print("     I: Add income")
-        userin = input("-------------------------------")
+        userin = input("-------------------------------\n")
 
         if userin in ["x", "X"]:
             break
